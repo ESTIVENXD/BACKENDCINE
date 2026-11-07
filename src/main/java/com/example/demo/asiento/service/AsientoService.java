@@ -19,31 +19,31 @@ import com.example.demo.telefono.entity.Telefono;
 @Service
 @RestController
 @RequestMapping("/asiento")
-@CrossOrigin (origins = "http://localhost:4200")
+@CrossOrigin ({"http://localhost:8100", "http://localhost:4200"})
 public class AsientoService {
 	@Autowired
 	AsientoRepository asientoRepository;
 	
 	@GetMapping (path = "/buscar")
-	@CrossOrigin (origins = "http://localhost:4200")
+	@CrossOrigin ({"http://localhost:8100", "http://localhost:4200"})
 	public List <Asiento> buscar(){
 		return asientoRepository.findAll();
 	}
 	
 	@GetMapping(path = "/buscar/{idSala}")
-	@CrossOrigin (origins = "http://localhost:4200")
+	@CrossOrigin ({"http://localhost:8100", "http://localhost:4200"})
 	public List<Asiento> buscarPorAsiento(@PathVariable ("idSala") Integer idSala){
 		
 		return asientoRepository.findByIdSala(idSala);
 	}
 	
 	@PostMapping
-	@CrossOrigin (origins = "http://localhost:4200")
+	@CrossOrigin ({"http://localhost:8100", "http://localhost:4200"})
 	public Asiento guardar (@RequestBody Asiento asiento) {
 		return asientoRepository.save(asiento);
 	}
 	@DeleteMapping ("/{id}")
-	@CrossOrigin (origins = "http://localhost:4200")
+	@CrossOrigin ({"http://localhost:8100", "http://localhost:4200"})
 	public void eliminar (@PathVariable ("id") Integer id) {
 		asientoRepository.deleteById(id);	
 	}

@@ -34,14 +34,14 @@ public class Cliente implements Serializable{
 	@Column (name ="Apellidos")
 	private String apellidos;
 	
-	@Column (name ="Correo")
-	private String correo;
+	@Column (name ="Email")
+	private String email;
 	
 	@Column (name ="Telefono")
 	private String telefono;
 	
-	@Column (name ="Contrasena")
-	private String contrasena;
+	@Column (name ="Password")
+	private String password;
 	
 	@Lob
 	@Column (name ="Fotografia")
@@ -79,12 +79,12 @@ public class Cliente implements Serializable{
 		this.apellidos = apellidos;
 	}
 
-	public String getCorreo() {
-		return correo;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getTelefono() {
@@ -95,12 +95,12 @@ public class Cliente implements Serializable{
 		this.telefono = telefono;
 	}
 
-	public String getContrasena() {
-		return contrasena;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getFotografia() {

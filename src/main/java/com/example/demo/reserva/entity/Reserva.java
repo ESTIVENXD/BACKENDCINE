@@ -32,8 +32,8 @@ public class Reserva implements Serializable{
 	@Column (name ="Cantidad_Entradas")
 	private int cantidadEntradas;
 	
-	@Column (name ="Total_a_Pagar", precision = 10, scale = 2)
-	private int totalAPagar;
+	@Column (name ="Total_a_Pagar")
+	private double totalAPagar;
 	
 	@Column (name ="Fecha_Reserva")
 	private LocalDateTime fechaReserva;
@@ -70,11 +70,11 @@ public class Reserva implements Serializable{
 		this.cantidadEntradas = cantidadEntradas;
 	}
 
-	public int getTotalAPagar() {
+	public double getTotalAPagar() {
 		return totalAPagar;
 	}
 
-	public void setTotalAPagar(int totalAPagar) {
+	public void setTotalAPagar(double totalAPagar) {
 		this.totalAPagar = totalAPagar;
 	}
 

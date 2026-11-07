@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.cliente.entity.Cliente;
 import com.example.demo.cliente.repository.ClienteRepository;
+import com.example.demo.usuario.entity.Usuario;
 
 @Service
 @RestController
@@ -38,4 +39,18 @@ public class ClienteService {
 	public void eliminar (@PathVariable ("id") Integer id) {
 		clienteRepository.deleteById(id);	
 	}
+	
+	@PostMapping (path ="/login")
+	@CrossOrigin ({"http://localhost:8100", "http://localhost:4200"})
+	public Cliente login(@RequestBody Cliente cliente) {
+
+		List<Cliente> clientes = clienteRepository.findByEmailAndPassword(cliente.getEmail(), cliente.getPassword());
+		
+		if (clientes.isEmpty()) {
+			return null;
+			
+		}
+		return clientes.get(0);
+	}
+
 }
